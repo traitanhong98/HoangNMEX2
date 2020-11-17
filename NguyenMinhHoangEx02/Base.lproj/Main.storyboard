@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,60 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NguyenMinhHoangEx02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mM1-8N-5O9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vww-j9-u6o">
+                                        <rect key="frame" x="16" y="14.5" width="205" height="32"/>
+                                        <segments>
+                                            <segment title="Đang cho vay"/>
+                                            <segment title="Đang vay"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6Y-35-l3U">
+                                        <rect key="frame" x="349" y="14.5" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Vww-j9-u6o" firstAttribute="centerY" secondItem="mM1-8N-5O9" secondAttribute="centerY" id="1cb-Dh-TLO"/>
+                                    <constraint firstAttribute="trailing" secondItem="n6Y-35-l3U" secondAttribute="trailing" constant="16" id="ELr-00-OqL"/>
+                                    <constraint firstAttribute="height" constant="60" id="EMY-Sp-E2z"/>
+                                    <constraint firstItem="Vww-j9-u6o" firstAttribute="leading" secondItem="mM1-8N-5O9" secondAttribute="leading" constant="16" id="PoH-7E-9y7"/>
+                                    <constraint firstItem="n6Y-35-l3U" firstAttribute="centerY" secondItem="Vww-j9-u6o" secondAttribute="centerY" id="mhH-yj-8eh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAD-jQ-bwz">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cAD-jQ-bwz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0CE-Mh-Li6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cAD-jQ-bwz" secondAttribute="trailing" id="4zS-0X-7Td"/>
+                            <constraint firstItem="mM1-8N-5O9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5uM-0g-kdf"/>
+                            <constraint firstItem="cAD-jQ-bwz" firstAttribute="top" secondItem="mM1-8N-5O9" secondAttribute="bottom" id="5vS-SC-tE3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mM1-8N-5O9" secondAttribute="trailing" id="JcF-oZ-8LH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cAD-jQ-bwz" secondAttribute="bottom" id="YFq-g5-NF7"/>
+                            <constraint firstItem="mM1-8N-5O9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v3k-gx-AUA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pageSegmentView" destination="Vww-j9-u6o" id="7oI-wS-xL2"/>
+                        <outlet property="pageViewController" destination="cAD-jQ-bwz" id="iw0-yZ-qf0"/>
+                        <outlet property="seeModeSwitch" destination="n6Y-35-l3U" id="BDU-EU-C8g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="104"/>
         </scene>
     </scenes>
 </document>
